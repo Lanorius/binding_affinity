@@ -1,0 +1,7 @@
+global:
+  sequences_file: proteins_with_10_interactions.txt
+  prefix: my_job
+seqvec_embeddings:
+  type: embed
+  protocol: seqvec
+  reduce: True

@@ -1,0 +1,7 @@
+global:
+  sequences_file: clean_proteins.fasta
+  prefix: my_job
+seqvec_embeddings:
+  type: embed
+  protocol: seqvec
+  reduce: True

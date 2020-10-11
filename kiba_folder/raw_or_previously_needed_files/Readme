@@ -1,0 +1,91 @@
+This file is for the sake of reproductability
+
+raw files you start with:
+
+raw_compound_file.txt
+interactions.txt
+sequence_file.fasta
+
+
+1. talk to Chris about how to encode the proteins
+	-sequences_file.fasta -> mapping_file.csv + reduced_embeddings_file.h5
+	
+
+now important files:
+
+reduced_embeddings_file.h5
+mapping_file.csv
+raw_compound_file.txt
+interactions.txt
+sequence_file.fasta
+
+
+2. use adjusting_fasta_to_embeddings.py
+	-creates clean_sequence_file.fasta
+
+
+now important files:
+
+reduced_embeddings_file.h5
+mapping_file.csv
+raw_compound_file.txt
+interactions.txt
+sequence_file.fasta
+clean_sequence_file.fasta
+
+
+3. transform the interactions.txt to a interactions.csv
+	-perhaps the short_replace_script.py can help you
+
+
+now important files:
+
+reduced_embeddings_file.h5
+mapping_file.csv
+raw_compound_file.txt
+interactions.csv
+sequence_file.fasta
+clean_sequence_file.fasta (CD-HIT 80% of sequence_file.fasta)
+
+
+4. use from_kiba_raw.py
+	-raw_compound_file.txt -> cids_smiles.txt + comp_index_to_id.csv
+	
+
+now important files:
+
+reduced_embeddings_file.h5
+mapping_file.csv
+cids_smiles.txt
+comp_index_to_id.csv
+interactions.csv
+sequence_file.fasta
+clean_sequence_file.fasta (CD-HIT 80% of sequence_file.fasta)
+
+
+(activate the env: for_chem_vae)
+5. use autoencode_comp.py
+	-cids_smiles + interactions.csv + sequence_file.fasta + clean_sequence_file.fasta ->
+	inner_vectors.csv + cleaned_interactions.csv + comp_index_to_id.csv
+	
+
+now important files:
+
+reduced_embeddings_file.h5
+mapping_file.csv
+cleaned_interactions.csv
+inner_vectors.csv 
+comp_index_to_id.csv
+
+6. use to_hd5.py
+	-inner_vectors.csv + comp_index_to_id.csv -> smile_vectors_with_cids.h5
+	
+
+now important files:
+
+reduced_embeddings_file.h5
+smile_vectors_with_cids.h5
+mapping_file.csv
+cleaned_interactions.csv	
+	
+

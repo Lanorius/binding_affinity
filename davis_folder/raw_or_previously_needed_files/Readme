@@ -1,0 +1,70 @@
+This file is for the sake of reproductability
+
+raw files you start with:
+
+cids_smiles.txt
+interactions.txt
+proteins.fasta
+
+
+1. use CD-HIT 80% to get clean_proteins.fasta from proteins.fasta
+
+
+now important files:
+
+cids_smiles.txt
+interactions.txt
+proteins.fasta
+clean_proteins.fasta
+
+2. talk to Chris about how to encode the proteins
+	-clean_proteins.fasta -> mapping_file.csv + reduced_embeddings_file.h5
+
+
+now important files:
+
+reduced_embeddings_file.h5
+mapping_file.csv
+inner_vectors.csv
+cleaned_interactions.csv
+comp_index_to_id.csv
+
+
+3. use_autoencode_comp.py
+	-cids_smiles.txt + interactions.txt + proteins.fasta + clean_proteins.fasta ->
+	inner_vectors.csv + cleaned_interactions.csv + comp_index_to_id.csv
+	
+	
+now important files:
+
+reduced_embeddings_file.h5
+mapping_file.csv
+inner_vectors.csv
+cleaned_interactions.csv
+comp_index_to_id.csv
+
+
+4. use from_kd_to_pkd.py
+	-cleaned_interactions.csv -> pkd_cleaned_interactions.csv
+
+
+now important files:
+
+reduced_embeddings_file.h5
+mapping_file.csv
+inner_vectors.csv
+pkd_cleaned_interactions.csv
+comp_index_to_id.csv
+
+
+5. use to_hd5.py
+	-comp_index_to_id.csv + inner_vectors.csv -> smile_vectors_with_cids.h5
+	
+	
+now important files:
+
+reduced_embeddings_file.h5
+smile_vectors_with_cids.h5
+mapping_file.csv
+pkd_cleaned_interactions.csv
+
