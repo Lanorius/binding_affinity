@@ -4,6 +4,8 @@ import numpy as np
 from sklearn import metrics
 from sklearn.metrics import precision_recall_curve
 
+# Don't touch it. These are just statistics.
+
 
 def get_aupr(Y, P):
     if hasattr(Y, 'A'): Y = Y.A

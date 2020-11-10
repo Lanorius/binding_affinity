@@ -3,6 +3,7 @@ import emetrics  # from Hakime
 import lifelines.utils
 import numpy as np
 
+# IF you really want to change something here about the output, feel free to do so. It is not a priority.
 
 def pltcolor(lst):
     colors = []

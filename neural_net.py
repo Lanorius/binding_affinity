@@ -4,6 +4,9 @@ import torch
 import torch.nn.functional as f
 import torch.nn as nn
 
+# I believe that we should leave this file the way it is.
+# If we finish everything else really fast, this is a place to experiment.
+
 
 class PcNet(nn.Module, ABC):
     def __init__(self, input_size_prot=1024, input_size_comp=196, hidden_size_prot=32):

@@ -13,6 +13,8 @@ import random
 
 from tqdm import tqdm
 
+# This file will need some work
+
 
 # when using data_loading_general you have to pass the files
 # (embeddings, compound_vectors, labels, mapping_file) as arguments
@@ -36,16 +38,6 @@ data_set = Dataset("kiba_folder/reduced_embeddings_file.h5",
                    "kiba_folder/mapping_file.csv",
                    "kiba")
 '''
-'''
-# for the BDB pkd Data
-data_used = ["pkd", "BDB Data pKd"]
-data_set = Dataset("bdb_pkd_folder/reduced_embeddings_file.h5",
-                   "bdb_pkd_folder/smile_vectors_with_cids.h5",
-                   "bdb_pkd_folder/pkd_cleaned_interactions.csv",
-                   "bdb_pkd_folder/mapping_file.csv",
-                   "pkd",
-                   "bdb_pkd_folder/cluster_dictionary.h5")
-'''
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -63,7 +55,6 @@ numbers_of_epochs = list(range(100, 300))
 # ###############################################################train/test split######################################
 
 train_main, test = train_test_split(data_set, test_size=1/6, random_state=42)
-
 train, train1 = train_test_split(train_main, test_size=1/5, random_state=42)
 train, train2 = train_test_split(train, test_size=1/4, random_state=42)
 train, train3 = train_test_split(train, test_size=1/3, random_state=42)

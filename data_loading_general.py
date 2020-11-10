@@ -2,8 +2,9 @@ import numpy as np
 import pandas as pd
 from silx.io.dictdump import h5todict
 import torch
-import random
+import random  # only for experimenting
 
+# This file might need a ton of work. BUT before you touch it, we have to make sure that we are done with our data.
 
 class Dataset:
     def __init__(self, embeddings, compound_vectors, label_file, mapping_file, data_type, cluster_map=None):
