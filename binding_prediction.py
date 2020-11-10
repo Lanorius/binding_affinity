@@ -64,9 +64,9 @@ numbers_of_epochs = list(range(100, 300))
 
 train_main, test = train_test_split(data_set, test_size=1/6, random_state=42)
 
-train1, train = train_test_split(train_main, test_size=1/5, random_state=42)
-train2, train = train_test_split(train, test_size=1/4, random_state=42)
-train3, train = train_test_split(train, test_size=1/3, random_state=42)
+train, train1 = train_test_split(train_main, test_size=1/5, random_state=42)
+train, train2 = train_test_split(train, test_size=1/4, random_state=42)
+train, train3 = train_test_split(train, test_size=1/3, random_state=42)
 train4, train5 = train_test_split(train, test_size=1/2, random_state=42)
 
 #######################################################################################################################
