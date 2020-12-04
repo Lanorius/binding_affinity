@@ -6,7 +6,7 @@ import torch.nn as nn
 from sklearn.model_selection import train_test_split
 from sklearn.utils import resample
 
-from data_loading_general import Dataset
+from data_loading_general_old import Dataset
 from neural_net import PcNet
 from stats_and_output import *
 import random
@@ -16,7 +16,7 @@ from tqdm import tqdm
 # This file will need some work
 
 
-# when using data_loading_general you have to pass the files
+# when using data_loading_general_old you have to pass the files
 # (embeddings, compound_vectors, labels, mapping_file) as arguments
 
 # Leave the Data that you want to analyze uncommented
