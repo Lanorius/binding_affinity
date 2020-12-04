@@ -1,0 +1,12 @@
+discard_per_amino_acid_embeddings: true
+mapping_file: davis/mapping_file.csv
+model_directory: /mnt/project/bio_embeddings/models/lms/bert
+prefix: davis
+protocol: prottrans_bert_bfd
+reduce: true
+remapped_sequences_file: davis/remapped_sequences_file.fasta
+sequences_file: davis/sequences_file.fasta
+simple_remapping: true
+stage_name: bert_embeddings
+start_time: '2020-12-04 11:27:19.608146+01:00'
+type: embed

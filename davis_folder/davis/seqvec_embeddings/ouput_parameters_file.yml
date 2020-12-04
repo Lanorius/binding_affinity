@@ -1,0 +1,18 @@
+discard_per_amino_acid_embeddings: true
+elapsed_time: 0:01:06.644888
+embeddings_transformer_function: null
+end_time: '2020-12-04 11:27:18.469963+01:00'
+mapping_file: davis/mapping_file.csv
+max_amino_acids: 15000
+options_file: /mnt/project/bio_embeddings/models/lms/seqvec/options.json
+prefix: davis
+protocol: seqvec
+reduce: true
+reduced_embeddings_file: davis/seqvec_embeddings/reduced_embeddings_file.h5
+remapped_sequences_file: davis/remapped_sequences_file.fasta
+sequences_file: davis/sequences_file.fasta
+simple_remapping: true
+stage_name: seqvec_embeddings
+start_time: '2020-12-04 11:26:11.825075+01:00'
+type: embed
+weights_file: /mnt/project/bio_embeddings/models/lms/seqvec/weights.hdf5

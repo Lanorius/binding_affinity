@@ -1,0 +1,13 @@
+discard_per_amino_acid_embeddings: true
+mapping_file: kiba/mapping_file.csv
+options_file: /mnt/project/bio_embeddings/models/lms/seqvec/options.json
+prefix: kiba
+protocol: seqvec
+reduce: true
+remapped_sequences_file: kiba/remapped_sequences_file.fasta
+sequences_file: kiba/sequences_file.fasta
+simple_remapping: true
+stage_name: seqvec_embeddings
+start_time: '2020-12-04 11:26:11.815502+01:00'
+type: embed
+weights_file: /mnt/project/bio_embeddings/models/lms/seqvec/weights.hdf5

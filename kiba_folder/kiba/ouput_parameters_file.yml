@@ -1,0 +1,43 @@
+seqvec_embeddings:
+  sequences_file: kiba/sequences_file.fasta
+  prefix: kiba
+  simple_remapping: true
+  mapping_file: kiba/mapping_file.csv
+  remapped_sequences_file: kiba/remapped_sequences_file.fasta
+  type: embed
+  protocol: seqvec
+  reduce: true
+  discard_per_amino_acid_embeddings: true
+  weights_file: /mnt/project/bio_embeddings/models/lms/seqvec/weights.hdf5
+  options_file: /mnt/project/bio_embeddings/models/lms/seqvec/options.json
+  stage_name: seqvec_embeddings
+  start_time: '2020-12-04 11:26:11.815502+01:00'
+  max_amino_acids: 15000
+  embeddings_transformer_function:
+  reduced_embeddings_file: kiba/seqvec_embeddings/reduced_embeddings_file.h5
+  end_time: '2020-12-04 11:26:58.777074+01:00'
+  elapsed_time: 0:00:46.961572
+bert_embeddings:
+  sequences_file: kiba/sequences_file.fasta
+  prefix: kiba
+  simple_remapping: true
+  mapping_file: kiba/mapping_file.csv
+  remapped_sequences_file: kiba/remapped_sequences_file.fasta
+  type: embed
+  protocol: prottrans_bert_bfd
+  model_directory: /mnt/project/bio_embeddings/models/lms/bert
+  reduce: true
+  discard_per_amino_acid_embeddings: true
+  stage_name: bert_embeddings
+  start_time: '2020-12-04 11:26:58.781890+01:00'
+  max_amino_acids: 6024
+  embeddings_transformer_function:
+  reduced_embeddings_file: kiba/bert_embeddings/reduced_embeddings_file.h5
+  end_time: '2020-12-04 11:27:56.905473+01:00'
+  elapsed_time: 0:00:58.123583
+global:
+  sequences_file: kiba/sequences_file.fasta
+  prefix: kiba
+  simple_remapping: true
+  mapping_file: kiba/mapping_file.csv
+  remapped_sequences_file: kiba/remapped_sequences_file.fasta

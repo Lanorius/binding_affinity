@@ -1,0 +1,20 @@
+global:
+  sequences_file: davis_proteins.fasta
+  prefix: davis
+  simple_remapping: true
+
+## Get embeddings
+
+seqvec_embeddings:
+  type: embed
+  protocol: seqvec
+  reduce: true
+  discard_per_amino_acid_embeddings: true
+  weights_file: /mnt/project/bio_embeddings/models/lms/seqvec/weights.hdf5
+  options_file: /mnt/project/bio_embeddings/models/lms/seqvec/options.json
+bert_embeddings:
+  type: embed
+  protocol: prottrans_bert_bfd
+  model_directory: /mnt/project/bio_embeddings/models/lms/bert
+  reduce: true
+  discard_per_amino_acid_embeddings: true

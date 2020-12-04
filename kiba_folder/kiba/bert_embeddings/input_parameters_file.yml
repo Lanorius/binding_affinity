@@ -1,0 +1,12 @@
+discard_per_amino_acid_embeddings: true
+mapping_file: kiba/mapping_file.csv
+model_directory: /mnt/project/bio_embeddings/models/lms/bert
+prefix: kiba
+protocol: prottrans_bert_bfd
+reduce: true
+remapped_sequences_file: kiba/remapped_sequences_file.fasta
+sequences_file: kiba/sequences_file.fasta
+simple_remapping: true
+stage_name: bert_embeddings
+start_time: '2020-12-04 11:26:58.781890+01:00'
+type: embed

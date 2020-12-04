@@ -1,0 +1,13 @@
+discard_per_amino_acid_embeddings: true
+mapping_file: davis/mapping_file.csv
+options_file: /mnt/project/bio_embeddings/models/lms/seqvec/options.json
+prefix: davis
+protocol: seqvec
+reduce: true
+remapped_sequences_file: davis/remapped_sequences_file.fasta
+sequences_file: davis/sequences_file.fasta
+simple_remapping: true
+stage_name: seqvec_embeddings
+start_time: '2020-12-04 11:26:11.825075+01:00'
+type: embed
+weights_file: /mnt/project/bio_embeddings/models/lms/seqvec/weights.hdf5
