@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import resample
 
 from data_loading_general_old import Dataset
+# from data_loading_general import Dataset
 from neural_net import PcNet
 from stats_and_output import *
 import random
@@ -33,7 +34,7 @@ data_set = Dataset("davis_folder/reduced_embeddings.h5",
 # for the Kiba Data
 data_used = ["kiba", "Kiba"]
 data_set = Dataset("kiba_folder/reduced_embeddings_file.h5",
-                   "kiba_folder/smile_vectors_with_cids.h5",
+                   #"kiba_folder/smile_vectors_with_cids.h5",
                    "kiba_folder/cleaned_interactions.csv",
                    "kiba_folder/mapping_file.csv",
                    "kiba")
