@@ -24,17 +24,17 @@ from tqdm import tqdm
 
 # for the Davis Data
 data_used = ["pkd", "Davis"]
-data_set = Dataset("davis_folder/reduced_embeddings.h5",
+data_set = Dataset("davis_folder/reduced_embeddings_file.h5",
                    "davis_folder/smile_vectors_with_cids.h5",
+                   # "davis_folder/testing_lignads.h5",
                    "davis_folder/pkd_cleaned_interactions.csv",
                    "davis_folder/mapping_file.csv",
                    "pkd")
-
 '''
 # for the Kiba Data
 data_used = ["kiba", "Kiba"]
 data_set = Dataset("kiba_folder/reduced_embeddings_file.h5",
-                   #"kiba_folder/smile_vectors_with_cids.h5",
+                   "kiba_folder/smile_vectors_with_cids.h5",
                    "kiba_folder/cleaned_interactions.csv",
                    "kiba_folder/mapping_file.csv",
                    "kiba")
@@ -46,11 +46,11 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #######################################################################################################################
 # ################################################parameters and hyperparameters#######################################
 
-number_of_random_draws = 10
+number_of_random_draws = 3  # 10 while NOT testing
 batch_sizes = list(range(20, 100))
 learning_rates = [0.01, 0.001, 0.0001]
-numbers_of_epochs = list(range(100, 300))
-# numbers_of_epochs = [1, 2, 3]  # for testing purposes
+# numbers_of_epochs = list(range(100, 300))
+numbers_of_epochs = [1, 2, 3]  # for testing purposes
 
 #######################################################################################################################
 # ###############################################################train/test split######################################
@@ -129,7 +129,7 @@ best_parameters_overall = [0, 0, 0]
 
 current_best_r2m = 0
 
-for test_train_index in tqdm(range(5)):
+for test_train_index in tqdm(range(3)):
     for optimization in tqdm(range(number_of_random_draws)):
         model = PcNet()
         batch_size = random.choice(batch_sizes)

@@ -9,6 +9,31 @@ import torch.nn as nn
 
 
 class PcNet(nn.Module, ABC):
+    def __init__(self, input_size_prot=1024, input_size_comp=768, hidden_size_prot=32, hidden_size_comp=24):
+        super(PcNet, self).__init__()
+        self.fc_prot = nn.Linear(input_size_prot, hidden_size_prot)
+        self.fc_comp = nn.Linear(input_size_comp, hidden_size_comp)
+        self.fc_lin1 = nn.Linear(hidden_size_prot+hidden_size_comp, 1024)
+        self.fc_drop1 = nn.Dropout(0.1)
+        self.fc_lin2 = nn.Linear(1024, 1024)
+        self.fc_drop2 = nn.Dropout(0.1)
+        self.fc_lin3 = nn.Linear(1024, 512)
+        self.fc_lin4 = nn.Linear(512, 1)
+
+    def forward(self, x):
+        out_prot = f.relu(self.fc_prot(x[0]))
+        out_comp = f.relu(self.fc_comp(x[1]))
+        out = torch.cat((out_prot, out_comp), dim=1)
+        out = self.fc_drop1(f.relu(self.fc_lin1(out)))
+        out = self.fc_drop2(f.relu(self.fc_lin2(out)))
+        out = f.relu(self.fc_lin3(out))
+        out1 = f.relu(self.fc_lin4(out))
+
+        return out1
+
+
+'''
+class PcNet(nn.Module, ABC):
     def __init__(self, input_size_prot=1024, input_size_comp=196, hidden_size_prot=32):
         super(PcNet, self).__init__()
         self.fc_prot = nn.Linear(input_size_prot, hidden_size_prot)
@@ -28,3 +53,4 @@ class PcNet(nn.Module, ABC):
         out1 = f.relu(self.fc_lin4(out))
 
         return out1
+'''
