@@ -40,11 +40,18 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #######################################################################################################################
 # ################################################parameters and hyperparameters#######################################
 
-number_of_random_draws = 3  # 10 while NOT testing
+number_of_random_draws = 10
 batch_sizes = list(range(20, 100))
 learning_rates = [0.01, 0.001, 0.0001]
-# numbers_of_epochs = list(range(100, 300))
-numbers_of_epochs = [1, 2, 3]  # for testing purposes
+numbers_of_epochs = list(range(100, 300))
+
+# for testing:
+'''
+number_of_random_draws = 1
+batch_sizes = list(range(20, 25))
+learning_rates = [0.01, 0.001, 0.0001]
+numbers_of_epochs = [1, 2, 3]
+'''
 
 #######################################################################################################################
 # ###############################################################train/test split######################################
@@ -211,3 +218,11 @@ print("CIs std is: ", round(stdev(CIs), 3))
 
 print("Best r2m was: ", current_best_r2m)
 print("Best parameters were:", best_parameters_overall)
+
+f = open("output.txt", "a")
+f.write("r2m std is: "+str(round(stdev(r2ms), 3))+"\n")
+f.write("AUPR std is: "+str(round(stdev(AUPRs), 3))+"\n")
+f.write("CIs std is: "+str(round(stdev(CIs), 3))+"\n")
+f.write("Best r2m was: "+str(current_best_r2m)+"\n")
+f.write("Best parameters were:"+str(best_parameters_overall)+"\n")
+f.close()

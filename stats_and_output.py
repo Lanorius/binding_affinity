@@ -65,9 +65,13 @@ def print_stats(all_predicted, all_labels, data_used):
     mse = np.square(np.subtract(all_labels, all_predicted)).mean()
 
     print("The rm2 value for this run is: ", round(rm2, 3))
-
     print("The AUPR for this run is: ", round(aupr, 3))
-
     print("The Concordance Index (CI) for this run is: ", round(ci, 3))
-
     print("The Mean Squared Error (MSE) for this run is: ", round(mse, 3))
+
+    f = open("output.txt", "a")
+    f.write("The rm2 value for this run is: "+str(round(rm2, 3))+"\n")
+    f.write("The AUPR for this run is: "+str(round(aupr, 3))+"\n")
+    f.write("The Concordance Index (CI) for this run is: "+str(round(ci, 3))+"\n")
+    f.write("The Mean Squared Error (MSE) for this run is: "+str(round(mse, 3))+"\n")
+    f.close()
