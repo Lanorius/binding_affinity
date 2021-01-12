@@ -14,12 +14,6 @@ import random
 
 from tqdm import tqdm
 
-# This file will need some work
-
-
-# when using data_loading_general_old you have to pass the files
-# (embeddings, compound_vectors, labels, mapping_file) as arguments
-
 # Leave the Data that you want to analyze uncommented
 
 # for the Davis Data
