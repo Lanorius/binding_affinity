@@ -16,6 +16,8 @@ from tqdm import tqdm
 
 # Leave the Data that you want to analyze uncommented
 
+
+'''
 # for the Davis Data
 data_used = ["pkd", "Davis"]
 data_set = Dataset("davis_folder/reduced_embeddings_file.h5",
@@ -32,7 +34,7 @@ data_set = Dataset("kiba_folder/reduced_embeddings_file.h5",
                    "kiba_folder/cleaned_interactions.csv",
                    "kiba_folder/mapping_file.csv",
                    "kiba")
-'''
+
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -131,7 +133,7 @@ best_parameters_overall = [0, 0, 0]
 current_best_r2m = 0
 
 
-# for test_train_index in tqdm(range(3)):
+# for test_train_index in tqdm(range(1)):
 for test_train_index in tqdm(range(5)):
     for optimization in tqdm(range(number_of_random_draws)):
         model = PcNet()
@@ -163,6 +165,7 @@ for test_train_index in tqdm(range(5)):
 
         trainer(training_sets[test_train_index], number_of_epochs, optimizer, batch_size)
         performance = tester(testing_tests[test_train_index])
+        print(performance)
         if performance > current_best_r2m:
             current_best_r2m = performance
             best_parameters_overall = [batch_size, learning_rate, number_of_epochs]

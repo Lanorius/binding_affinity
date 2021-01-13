@@ -6,7 +6,7 @@ io:
 limit: 
     coreLimit: 5
     # in hh:mm
-    runtimeLimit: 48:00
+    runtimeLimit: 96:00
     # Limit the execution to 8GB of CPU RAM
     memLimit: 8G!
 resource: 
@@ -45,6 +45,6 @@ resource:
 
 properties:
     queueName: rostlab-normal-2
-    jobName: binding_prediction_daniel
+    jobName: binding_prediction_daniel_kiba
 command: python binding_prediction.py
 

@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "binding_prediction.py", line 1, in <module>
-    from statistics import stdev
-ImportError: No module named statistics
