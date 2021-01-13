@@ -130,7 +130,7 @@ best_parameters_overall = [0, 0, 0]
 
 current_best_r2m = 0
 
-for test_train_index in tqdm(range(3)):
+for test_train_index in tqdm(range(5)):
     for optimization in tqdm(range(number_of_random_draws)):
         model = PcNet()
         batch_size = random.choice(batch_sizes)

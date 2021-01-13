@@ -1,0 +1,41 @@
+Sender: LSF System <lsfadmin@lsf-server-3.rostclust>
+Subject: Job 4258: <binding_prediction_daniel> in cluster <rost_lsf_cluster_1> Exited
+
+Job <binding_prediction_daniel> was submitted from host <lsf-master-1.rostclust> by user <giessing> in cluster <rost_lsf_cluster_1> at Wed Jan 13 08:42:22 2021
+Job was executed on host(s) <lsf-server-3.rostclust>, in queue <rostlab-normal-2>, as user <giessing> in cluster <rost_lsf_cluster_1> at Wed Jan 13 08:42:22 2021
+</mnt/home/giessing> was used as the home directory.
+</mnt/project/protdrugaffinity/dg/binding_affinity> was used as the working directory.
+Started at Wed Jan 13 08:42:22 2021
+Terminated at Wed Jan 13 08:42:23 2021
+Results reported at Wed Jan 13 08:42:23 2021
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+python binding_prediction.py
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   0.06 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   1 sec.
+    Turnaround time :                            1 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <stderr.log> for stderr output of this job.
+
