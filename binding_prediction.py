@@ -42,7 +42,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #######################################################################################################################
 # ################################################parameters and hyperparameters#######################################
 
-number_of_random_draws = 10  # used to be 10
+number_of_random_draws = 5  # used to be 10
 batch_sizes = list(range(20, 100))
 learning_rates = [0.01, 0.001, 0.0001]
 numbers_of_epochs = list(range(100, 300))
